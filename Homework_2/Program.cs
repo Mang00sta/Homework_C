@@ -5,14 +5,20 @@
 918 -> 1 
 */
 
+int num;
 
+void CutNumberVoid()
+{
+    int num = new Random().Next (100,1000);
+    Console.WriteLine("Current random is" + num);
 
-
-
-
-
-
-
+        int des = num /10%10;  // остаток от деления ищем 3ю
+        Console.WriteLine("Result" + des);
+    
+    
+}
+CutNumberVoid();
+/*/
 
 // Задача 13 
 /* Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. 
@@ -20,6 +26,16 @@
 78 -> третьей цифры нет
 32679 -> 6 
 */
+
+
+
+
+
+
+
+
+
+
 
 
 // Задача 15

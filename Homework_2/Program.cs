@@ -2,41 +2,49 @@
 /* Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа. 
 456 -> 5
 782 -> 8
-918 -> 1 
-*/
+918 -> 1 */
+/*/
+int num; // объявили переменную 
 
-int num;
+Console.Write("Insert three-digit number: "  ); // вывели текст на экран
+num = Convert.ToInt32(Console.ReadLine()); //конвертировали что ввел пользователь в тип данных int  
 
-void CutNumberVoid()
+    if (num<99||num>999) // оператор в котором переменная введенная пользователем проверяеться что введенное число в периоде 99 до 999 
+    {
+        Console.WriteLine("The number is introduced incorrectly!!! Start the input again."); //выводим текст на экран
+        return; //окончание оператора
+    }
+        
+void SecondNumberVoid() // создаем метод поиска 2й цифры в числе 
 {
-    int num = new Random().Next (100,1000);
-    Console.WriteLine("Current random is" + num);
-
-        int des = num /10%10;  // остаток от деления ищем 3ю
-        Console.WriteLine("Result" + des);
-    
-    
+        int des = num /10%10; // вводим переменную des и находим вторую цифру в числе делением на целое % 
+        Console.WriteLine("Result - " + des); // выводим значение  des на экран
 }
-CutNumberVoid();
+SecondNumberVoid(); // оканчиваем метод
 /*/
 
 // Задача 13 
 /* Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. 
 645 -> 5
 78 -> третьей цифры нет
-32679 -> 6 
-*/
+32679 -> 6 */
+/*
+
+
+void ThirdVoidNumber()
+{
+    int num=new Random().Next(10,1000); //нашли переменную рандомом
+    Console.WriteLine("Random number:  " + num); // вывели на экран 
+
+    int sot=num/10;   //посчитали и добавили переменную
+    Console.WriteLine("Result: " + sot); //вывели ее на экран
 
 
 
 
-
-
-
-
-
-
-
+}
+ThirdVoidNumber();
+/*/
 
 // Задача 15
 /* Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным. 
@@ -44,3 +52,7 @@ CutNumberVoid();
 7 -> да
 1 -> нет
 */
+
+
+
+

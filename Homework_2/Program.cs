@@ -4,6 +4,7 @@
 782 -> 8
 918 -> 1 */
 /*/
+
 int num; // объявили переменную 
 
 Console.Write("Insert three-digit number: "  ); // вывели текст на экран
@@ -30,7 +31,6 @@ SecondNumberVoid(); // оканчиваем метод
 32679 -> 6 */
 /*
 
-
 void ThirdVoidNumber()
 {
     int num=new Random().Next(10,1000); //нашли переменную рандомом
@@ -50,9 +50,34 @@ ThirdVoidNumber();
 /* Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным. 
 6 -> да 
 7 -> да
-1 -> нет
-*/
+1 -> нет */
 
+/*
+int day;
+
+Console.Write("Insert number day: "); // принимаем цифру
+day=Convert.ToInt32(Console.ReadLine());
+
+if (day<0||day>7) // оператор в котором переменная введенная пользователем проверяеться что введенное число в периоде 99 до 999 
+    {
+        Console.WriteLine("The number is introduced incorrectly!!! Start the input again."); //выводим текст на экран
+        return; //окончание оператора
+    }
+
+    if (day==6)
+    {
+      Console.WriteLine("Good! This day is weekend (Saturday).");
+    }
+    else    
+        if (day==7)
+        {
+        Console.WriteLine("Good! This day is weekend (Sanday).");
+        }
+        else
+        {
+        Console.WriteLine("Sorry! This day is not weekend!");
+        }    
+/*/
 
 
 

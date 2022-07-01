@@ -82,8 +82,7 @@ SecondNumber(n);
 7 -> да
 1 -> нет */
 
-//*/
-
+/*/
 void Weeked(int day) 
 {
 if (day<0||day>7) // оператор в котором переменная введенная пользователем проверяеться что введенное число в периоде 99 до 999 
@@ -111,7 +110,6 @@ Console.Write("Insert number day: "); // принимаем цифру
 int day=Convert.ToInt32(Console.ReadLine());
 
 Weeked(day);
-
 /*/
 
 
@@ -120,7 +118,7 @@ Weeked(day);
 645 -> 5
 78 -> третьей цифры нет
 32679 -> 6 */
-//*
+
 
 // 1 вар. Сделать из числа массив и забрать 3. цифру
 // 2. вар Сделать цикл который будет по 1 убирать цифру из числа до 3го знака
@@ -128,22 +126,23 @@ Weeked(day);
 // 4. Через string забрать число из конкретной номера (но это мы еще не учили)
 
 
-/*
-int ThirdNum(int n);
-int number=0;
-int d =0;
-    while (n>number)
+//*
+void ThirdNum(int n)
+{
+    int count=0;
+    int d =0;
+    while (n>count)
     {
-        number = n/100;
+        number = n/1000;
         d = number%10;
         Console.WriteLine("Result: " + d);
-        break;   
+        count--;
     }
-        if(d<100) 
-        {
-            Console.WriteLine("Шляпа  ");
-        }
-    return d;
+    //     if(d<100) 
+    //     {
+    //         Console.WriteLine("Шляпа  ");
+    //     }
+} 
 
 Console.Write("Insert number: "  ); // вывели текст на экран
 int n = Convert.ToInt32(Console.ReadLine()); //конвертировали что ввел пользователь в тип данных int  

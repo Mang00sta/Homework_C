@@ -50,7 +50,7 @@
 
 
 // Потуги решить нормально через int 
-//*/
+/*/
 int SecondNumber(int num) // создаем метод поиска 2й цифры в числе 
 {   
     
@@ -83,11 +83,9 @@ SecondNumber(n);
 1 -> нет */
 
 //*/
-int day;
 
-Console.Write("Insert number day: "); // принимаем цифру
-day=Convert.ToInt32(Console.ReadLine());
-
+void Weeked(int day) 
+{
 if (day<0||day>7) // оператор в котором переменная введенная пользователем проверяеться что введенное число в периоде 99 до 999 
     {
         Console.WriteLine("The number is introduced incorrectly!!! Start the input again."); //выводим текст на экран
@@ -107,10 +105,14 @@ if (day<0||day>7) // оператор в котором переменная в�
         {
         Console.WriteLine("Sorry! This day is not weekend!");
         }    
+}
+
+Console.Write("Insert number day: "); // принимаем цифру
+int day=Convert.ToInt32(Console.ReadLine());
+
+Weeked(day);
+
 /*/
-
-
-
 
 
 // Задача 13 

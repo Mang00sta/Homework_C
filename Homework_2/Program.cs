@@ -83,7 +83,7 @@ SecondNumber(n);
 1 -> нет */
 
 /*/
-void Weeked(int day) 
+void Weekend(int day) 
 {
 if (day<0||day>7) // оператор в котором переменная введенная пользователем проверяеться что введенное число в периоде 99 до 999 
     {
@@ -109,7 +109,7 @@ if (day<0||day>7) // оператор в котором переменная в�
 Console.Write("Insert number day: "); // принимаем цифру
 int day=Convert.ToInt32(Console.ReadLine());
 
-Weeked(day);
+Weekend(day);
 /*/
 
 
@@ -126,7 +126,7 @@ Weeked(day);
 // 4. Через string забрать число из конкретной номера (но это мы еще не учили)
 
 /*/
- void ThirdVoidNumber(int n)
+ void ThirdVoidDigit(int n)
 {
     int first=0;
     int second=0;
@@ -144,14 +144,15 @@ Weeked(day);
 Console.Write("Insert number: "  ); // вывели текст на экран
 int n = Convert.ToInt32(Console.ReadLine()); //конвертировали что ввел пользователь в тип данных int  
 
-if (n>100)
+if (n>99)
     {
-       Console.Write ("The third digit of the number: "); ThirdVoidNumber(n);
+       Console.Write ("The third digit of the number: "); ThirdVoidDigit(n);
     }
     else 
     {
         Console.WriteLine("There in no third number!!!");           
     }
+
 Console.ReadKey();
 Console.Clear();
 //*/

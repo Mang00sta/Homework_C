@@ -113,132 +113,45 @@ Weeked(day);
 /*/
 
 
-// Задача 13 
+// Задача 13 с ****** звездочками
 /* Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет. 
 645 -> 5
 78 -> третьей цифры нет
 32679 -> 6 */
 
-
+//Размышления внутри:
 // 1 вар. Сделать из числа массив и забрать 3. цифру
 // 2. вар Сделать цикл который будет по 1 убирать цифру из числа до 3го знака
 // 3. вар С помощью сдвига влево до 3й ?????
 // 4. Через string забрать число из конкретной номера (но это мы еще не учили)
 
-
-//*
-void ThirdNum(int n)
+/*/
+ void ThirdVoidNumber(int n)
 {
-    int count=0;
-    int d =0;
-    while (n>count)
+    int first=0;
+    int second=0;
+    int third=0;
+    while (n>0)
     {
-        number = n/1000;
-        d = number%10;
-        Console.WriteLine("Result: " + d);
-        count--;
+        third=second;
+        second = first;
+        first = n - (n / 10) * 10; //формула n%10
+        n /= 10;
     }
-    //     if(d<100) 
-    //     {
-    //         Console.WriteLine("Шляпа  ");
-    //     }
-} 
+    Console.WriteLine(third);
+}
 
 Console.Write("Insert number: "  ); // вывели текст на экран
 int n = Convert.ToInt32(Console.ReadLine()); //конвертировали что ввел пользователь в тип данных int  
 
-ThirdNum(n);
-
-// else 
-// {
-//     number = (number*100)%100;
-//     Console.WriteLine("Result2: " + number);
-// }
-
-
-// if (num<9999||num>999)
-// {
-//     n=n/10;
-// }
-// if (num<99||num>999)
-// {
-//     n=n/10;
-// }
-// if (num<99||num>999)
-// {
-//     n=n/10;
-// }
-
-
-// if (n<100)
-// {
-    
-// }
-//int number=number/100; 
-
-
-// int Digit(int x)
-// {
-//     while (i>n) 
-//         {
-//            x /= 10;
-//         }
-//     return (x % 10) + '0';
-// }
-
-// Digit(); // метод - распечатал
-     
-
-
-
-
-
-// int k; // объявили переменную 
-
-// Console.Write("Insert number: "  ); // вывели текст на экран
-// k = Convert.ToInt32(Console.ReadLine()); //конвертировали что ввел пользователь в тип данных int  
-
-// int des = k/=10;
-
-//     // if (k=>0) 
-//     // {
-//     //     k /= 10;
-//     //     return des;
-//     // }
-
-// Console.WriteLine("Result: " + des);
-
-
-// }
-
-// void ThirdVoidNumber()
-// {
-//     //int num=new Random().Next(10,1000); //нашли переменную рандомом
-//     //Console.WriteLine("Random number:  " + num); // вывели на экран 
-   
-//         if (num<=100)
-//         {
-//             Console.WriteLine("There in no third number");
-//         }
-
-
-//     Console.WriteLine("Result: " + sot); //вывели ее на экран
-// }
-
-// ThirdVoidNumber();
+if (n>100)
+    {
+       Console.Write ("The third digit of the number: "); ThirdVoidNumber(n);
+    }
+    else 
+    {
+        Console.WriteLine("There in no third number!!!");           
+    }
+Console.ReadKey();
+Console.Clear();
 //*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

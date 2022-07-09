@@ -51,7 +51,7 @@ Console.WriteLine(Polindrom(s));
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-/*
+//*
 void CubeN(int n)
 {
      for (int i=0; i<n; i++)
@@ -67,4 +67,3 @@ CubeN(num);
 
 Console.ReadKey();
 Console.Clear();
-/*/

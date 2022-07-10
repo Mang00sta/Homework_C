@@ -1,31 +1,34 @@
 ﻿// методы
-int[] CreateRandomArrayMinMax(int size, int minValue, int maxValue) 
-{ 
-    int[] newArray = new int[size];  
- 
-    for(int i = 0; i < size; i++) 
-        newArray[i] = new Random().Next(minValue, maxValue+1); 
- 
-    return newArray; 
-} 
+int [] CreateRandomArray (int size) // метод который генерирует случайные числа от заданных чисел
+{
+    int[] NewArray = new int [size];
 
-int[] CreateRandomArray(int size) 
-{ 
-    int[] newArray = new int[size];  
- 
-    for(int i = 0; i < size; i++) 
-        newArray[i] = new Random().Next(); 
- 
-    return newArray; 
-} 
+    for (int i=0; i<size; i++)
+    NewArray[i] = new Random().Next(100);
 
-void ShowArray(int[] array) 
-{ 
-    for(int i = 0; i < array.Length; i++) 
-        Console.Write(array[i] + " "); 
- 
-    Console.WriteLine(); 
-} 
+    return NewArray;    
+}
+
+void ShowArray (int[] array) // метод подбора
+{
+    for (int i=0; i<array.Length; i++) //если начинаем поиск с i+1, тогда мы должны 1 единицу отнять i<Array.Length -1
+    Console.Write(array[i] + " ");
+    
+}
+
+int FindDishwindSum(int[] array)
+{
+    int sum=0;
+
+    for (int i=0; i<array.Length; i++)
+        if (array[i]%2==0) 
+        {
+            sum=sum+array[i];
+        }
+        
+
+    return sum;
+}
 
 
 
@@ -40,31 +43,19 @@ void ShowArray(int[] array)
 //[3, 7, 23, 12] -> 19
 //[-4, -6, 89, 6] -> 0
 
-int[] SummNechet(int[] newArray)
-{
-    int sum=0;
-    for (int i=0; i>newArray.Length; i++)
-        newArray[i]=newArray[i]/2;
-            if (newArray[i]>0)
-            {
-                 sum=sum+newArray[i];
-            }
-    return sum;
-}
+/*
+Console.Write("Input array: ");
+int size=Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
+int [] array = CreateRandomArray (size);
+ShowArray(array); Console.WriteLine();
+int sumofDiswind=FindDishwindSum(array); Console.WriteLine();
+Console.WriteLine("Summ diswind array: " + sumofDiswind);
 
-
-Console.Write("Input size of array: "); 
-int size = Convert.ToInt32(Console.ReadLine()); 
-
- 
-int[] array = CreateRandomArray(size); 
-ShowArray(array); 
-int[] array1 = SummNechet(sum); 
-ShowArray(array1); 
-
-
-
+Console.ReadKey();
+Console.Clear();
+/*/
 
 //! Задача 38:** Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 //[3 7 22 2 78] -> 76
@@ -72,59 +63,3 @@ ShowArray(array1);
 
 
 
-
-/*
-Задача 1. Напишите программу замена элементов массива: 
-// положительные элементы замените на соответствующие  
-//отрицательные, и наоборот. 
- 
-int[] CreateRandomArray(int size, int minValue, int maxValue) 
-{ 
-    int[] newArray = new int[size];  
- 
-    for(int i = 0; i < size; i++) 
-        newArray[i] = new Random().Next(minValue, maxValue+1); 
- 
-    return newArray; 
-} 
- 
-int[] Otric(int[] newArray) 
-{ 
-    for(int i = 0; i < newArray.Length; i++) 
-    newArray[i] = newArray[i] * -1; 
- 
-    return newArray; 
-} 
- 
-void ShowArray(int[] array) 
-{ 
-    for(int i = 0; i < array.Length; i++) 
-        Console.Write(array[i] + " "); 
- 
-    Console.WriteLine(); 
-} 
- 
-Console.Write("Input size of array: "); 
-int size = Convert.ToInt32(Console.ReadLine()); 
-Console.Write("Input min possible value of elements: "); 
-int min = Convert.ToInt32(Console.ReadLine()); 
-Console.Write("Input max possible value of elements: "); 
-int max = Convert.ToInt32(Console.ReadLine()); 
- 
-int[] array = CreateRandomArray(size, min, max); 
-ShowArray(array); 
-int[] otric2 = Otric(array); 
-ShowArray(otric2);
-
-
-int [] arr = 
-int ( )
-
-
-
-
-Console.Write ("Insert number: ");
-int num=Convert.ToInt32(Console.ReadLine());
-
-Console.WriteLine("The sum og the numbers among: " + Dig(num));
-*/

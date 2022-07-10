@@ -4,7 +4,7 @@ int [] CreateRandomArray (int size) // метод который генерир�
     int[] NewArray = new int [size];
 
     for (int i=0; i<size; i++)
-    NewArray[i] = new Random().Next(100);
+    NewArray[i] = new Random().Next(i+1000); // Для задачи 36 ставим (-100,100). Не хватило тямы сделать через ограничение цикла if (array[i]>99||array[i]<999) 
 
     return NewArray;    
 }
@@ -29,7 +29,7 @@ void ShowArray (int[] array) // метод печати на экран
     Console.Write(array[i] + " ");
     
 }
-int FindDishwindSum(int[] array) //метод нахождения суммы нечетных чисел
+int FindDishwindSum(int[] array) //метод нахождения суммы нечетных чисел (по ошибке сделал не стал удалять)
 {
     int sum=0;
     int i=0;
@@ -41,34 +41,31 @@ int FindDishwindSum(int[] array) //метод нахождения суммы н
 }
 int FindEvenDig(int[] array) //метод нахождения четного числа
 {
+    
     int i=0;
     int count=0;
     for (; i<array.Length; i++)
+    {
         if (array[i]%2==0)
-            count++;
-        return count;
+                 count++; 
+    }
+           
+    return count;
 }
-int Position (int[] array) // метод подбора минимальной позиции
+int DishwindPosition (int[] array) // метод подбора нечетной позиции
 {
     int i=0;
-    int minPosition=i;
-    int j=0;
-    for (i=0; i<array.Length-1; i++) //если начинаем поиск с i+1, тогда мы должны 1 единицу отнять i<Array.Length -1
-    {
-        for (j = i+1; j<array.Length; j++) //начинаем с отсартированного места j = i+1
-         {
-            //ищем минимальный. Текущий меньше элемента котрый находиться на minPosition. 
-            //то сохраняем minPosition (minPosition=j) 
-            if (array[j]<array[minPosition]) minPosition=j; 
-         }
-        
-        int temporary=array[i]; // Замена позиции через темп 
-        array[i]=array[minPosition]; // в i кладем минимальную
-        array[minPosition]=temporary; // кладем временный элемент
-        
-    }
-    return minPosition;
-} 
+    int current=i;
+    int sum=0;
+    for (i=0; i<array.Length; i++) 
+            if (i%2!=0) 
+            {
+                current=array[i];
+                sum=sum+current;  
+                Console.WriteLine(current);
+            }
+    return sum;
+}
 int MinDigit(int [] array) // метод подбора минимального числа
 {
     int minArray=array[0];
@@ -97,7 +94,7 @@ Console.Write("Input array: ");
 int size=Convert.ToInt32(Console.ReadLine()); Console.WriteLine();
 
 int [] array = CreateRandomArray (size);
-Console.Write ($"Array: "); ShowArray(array); // не получаеться собрать 
+Console.Write ($"Array: "); ShowArray(array); // не получаеться собрать в одну строку
 
 Console.WriteLine();
 int array2 = FindEvenDig (array);
@@ -116,7 +113,7 @@ Console.WriteLine();
 
 int [] array = CreateRandomArray (size);
 ShowArray(array); Console.WriteLine();
-int sumofDiswind=FindDishwindSum(array); Console.WriteLine();
+int sumofDiswind=DishwindPosition(array); Console.WriteLine();
 Console.WriteLine("Summ diswind array: " + sumofDiswind);
 
 Console.ReadKey();

@@ -70,28 +70,25 @@ Console.WriteLine($"Numbers more thеrе '0': {array2}");
 
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-
-double Dot1 (double b1,     double k1,   double b2,     double k2,     double x,     double y) 
+/*
+double Dot1 (double b1,     double k1,   double b2,     double k2   ) 
 {
-    // double b1=0;
-    // double k1=0; 
-    // double b2=0; 
-    // double k2=0; 
-    // double x=0;
-    // double y=0;
-        
+     double x=0;
+     double y=0;
+     double result=0;
 
-        
             x= - (b1-b2)/(k1-k2);
             y= k1*x+b1;
-            double result=x;
-           if (x!=0)
-
-           return result;
+            if (x==y)
+            {
+               Console.WriteLine($"Пересечение в точке: ({x};{y})");
+            }
             
-           
-        
-        
+            else 
+            {
+               Console.WriteLine($"Пересечения нет: ({x};{y})"); 
+            }
+           return result;
       
 }
 
@@ -105,15 +102,11 @@ Double b2=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
 Console.Write("Input array k2: ");
 Double k2=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
 
-double x=0;
 
-System.Console.WriteLine(Dot1(x));
+Dot1(b1, k1, b2, k2);
+/*/
 
-
-
-
-
-// Просто решил. Методом пока незнаю.
+// Просто решил более простым способом (это было первое решение).
 /*
 Console.Write("Input array b1: ");
 Double b1=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();

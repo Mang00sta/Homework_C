@@ -12,7 +12,7 @@ int [] CreateArray (int size)
     {
         {
             Console.WriteLine($"Input {i+1} element: "); 
-            array[i] = Convert.ToInt32(Console.ReadLine());   
+            array[i] = Convert.ToDouble(Console.ReadLine());   
         }
     }
     Console.WriteLine();
@@ -35,7 +35,7 @@ int HowDigit (int [] array)
     }
     
 Console.Write("Input array: ");
-int num=Convert.ToInt32(Console.ReadLine()); Console.WriteLine();
+int num=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
 
 int [] array = CreateArray (num);
 Console.WriteLine ($"Array: "); ShowArray(array); 
@@ -71,9 +71,61 @@ Console.WriteLine($"Numbers more thеrе '0': {array2}");
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 
+double Dot1 (double b1,     double k1,   double b2,     double k2,     double x,     double y) 
+{
+    // double b1=0;
+    // double k1=0; 
+    // double b2=0; 
+    // double k2=0; 
+    // double x=0;
+    // double y=0;
+        
+
+        
+            x= - (b1-b2)/(k1-k2);
+            y= k1*x+b1;
+            double result=x;
+           if (x!=0)
+
+           return result;
+            
+           
+        
+        
+      
+}
+
+
+Console.Write("Input array b1: ");
+Double b1=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+Console.Write("Input array k1: ");
+Double k1=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+Console.Write("Input array b2: ");
+Double b2=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+Console.Write("Input array k2: ");
+Double k2=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+
+double x=0;
+
+System.Console.WriteLine(Dot1(x));
 
 
 
 
 
+// Просто решил. Методом пока незнаю.
+/*
+Console.Write("Input array b1: ");
+Double b1=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+Console.Write("Input array k1: ");
+Double k1=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+Console.Write("Input array b2: ");
+Double b2=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
+Console.Write("Input array k2: ");
+Double k2=Convert.ToDouble(Console.ReadLine()); Console.WriteLine();
 
+double x= - (b1-b2)/(k1-k2);
+double y= k1*x+b1;
+
+Console.WriteLine($"Пересечение в точке: ({x};{y})");
+/*/

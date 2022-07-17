@@ -48,7 +48,7 @@ Show2DArrayMaterialNum (RandomArrayMaterialNum);
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-
+/*
 int [,] Create2DArray (int rows, int columns)
 {
     
@@ -64,7 +64,7 @@ void Show2DArray (int [,] array)
 {
     for (int i =0; i<array.GetLength(0); i++) // 0??
     {
-        for (int j=0; j<array.GetLength(1); j++) //??
+        for (int j=0; j<array.GetLength(1); j++) 
         Console.Write(array[i,j] + "\t");
         Console.WriteLine(); 
     }
@@ -105,7 +105,7 @@ Show2DArray (Myarray);
 Console.WriteLine();
 Searchforthenumber(Myarray, Digit);
 Console.WriteLine();
-
+/*/
 
 //! Задача 52. 
 //Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
@@ -115,4 +115,49 @@ Console.WriteLine();
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
+
+int [,] Create2DArray (int rows, int columns)
+{
+    
+    int [,] newArray= new int [rows, columns];
+    for (int i = 0; i<rows; i++) // цикл 1
+        for (int j=0; j<columns; j++ ) // цикл 2
+        newArray [i,j] = new Random().Next(0,100); 
+        Console.WriteLine(); 
+    return newArray;    
+}
+
+void Show2DArray (int [,] array)
+{
+    for (int i =0; i<array.GetLength(0); i++) // 0??
+    {
+        for (int j=0; j<array.GetLength(1); j++) //??
+        Console.Write(array[i,j] + "\t");
+        Console.WriteLine(); 
+    }
+}
+
+void FindDigSumm (int [,] array)
+{
+    int sum = 0;
+    for (int x =0; x<array.GetLength(0); x++)
+        for (int y =0; y<array.GetLength(1); y++)
+        
+        if (y==1) 
+        //sum=(array[j,j]+array[j,j]); 
+        Console.Write(array[x,y] + "\t");
+    //return sum;
+
+}
+Console.Write ("2D Array: ");
+int m = 5;
+int n = 5;
+
+Console.WriteLine();
+
+int [,] Myarray = Create2DArray(m,n);
+Show2DArray (Myarray);
+//Console.WriteLine($"Среднее арифмитическое столбца {FindDigSumm (Myarray)}  " );
+Console.WriteLine();
+FindDigSumm (Myarray);
 

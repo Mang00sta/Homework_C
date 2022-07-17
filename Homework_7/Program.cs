@@ -1,4 +1,5 @@
-﻿// Методы
+﻿
+// Методы
 double [,] CreateRandom2DArrayMaterialNum (int rows, int columns)
 {
     double [,] newArray =new double[rows, columns];
@@ -11,7 +12,7 @@ double [,] CreateRandom2DArrayMaterialNum (int rows, int columns)
     
         return newArray;
 }
-void Show2DArray (double [,] array)
+void Show2DArrayMaterialNum (double [,] array)
 {
     for (int i =0; i<array.GetLength(0); i++) // 0??
     {
@@ -19,7 +20,7 @@ void Show2DArray (double [,] array)
         //Console.Write("{0,6:F2}", array[i,j]);
        Console.Write(array[i,j] + "\t");
 
-        Console.WriteLine(); // ставиться только во внутри 2 цикла
+        Console.WriteLine(); 
     }
 }
 
@@ -36,7 +37,7 @@ Console.WriteLine("Input number of columns: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
 double [,] RandomArrayMaterialNum = CreateRandom2DArrayMaterialNum(m,n);
-Show2DArray(RandomArrayMaterialNum);
+Show2DArrayMaterialNum (RandomArrayMaterialNum);
 /*/
 
 
@@ -48,7 +49,62 @@ Show2DArray(RandomArrayMaterialNum);
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
+int [,] Create2DArray (int rows, int columns)
+{
+    
+    int [,] newArray= new int [rows, columns];
+    for (int i = 0; i<rows; i++) // цикл 1
+        for (int j=0; j<columns; j++ ) // цикл 2
+        newArray [i,j] = new Random().Next(0,100); 
+        Console.WriteLine(); 
+    return newArray;    
+}
 
+void Show2DArray (int [,] array)
+{
+    for (int i =0; i<array.GetLength(0); i++) // 0??
+    {
+        for (int j=0; j<array.GetLength(1); j++) //??
+        Console.Write(array[i,j] + "\t");
+        Console.WriteLine(); 
+    }
+}
+
+void Searchforthenumber (int [,] array, int Digit)
+{
+    int i =0;   
+    int j=0;
+    for (;i<array.GetLength(0); i++)
+        for (; j<array.GetLength(1); j++) 
+            if (array[i,j]==Digit)
+            {
+                
+                Console.WriteLine("Your digit in the table! ");
+                
+            }
+            else
+            {
+               
+                Console.WriteLine("!!!!Your digit NON in the table!!!! ");     
+                  
+            } 
+            
+}
+
+
+Console.Write("Input digit: ");
+int Digit = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
+Console.Write ("2D Array: ");
+int m = 5;
+int n = 5;
+Console.WriteLine();
+
+int [,] Myarray = Create2DArray(m,n);
+Show2DArray (Myarray);
+Console.WriteLine();
+Searchforthenumber(Myarray, Digit);
+Console.WriteLine();
 
 
 //! Задача 52. 

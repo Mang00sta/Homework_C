@@ -122,7 +122,8 @@ int [,] Create2DArray (int rows, int columns)
     int [,] newArray= new int [rows, columns];
     for (int i = 0; i<rows; i++) // цикл 1
         for (int j=0; j<columns; j++ ) // цикл 2
-        newArray [i,j] = new Random().Next(0,20); 
+        newArray [i,j] = new Random().Next(0,20); //+ NextDouble() 
+        //использовать mathRaund
         Console.WriteLine(); 
     return newArray;    
 }

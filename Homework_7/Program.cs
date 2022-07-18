@@ -122,7 +122,7 @@ int [,] Create2DArray (int rows, int columns)
     int [,] newArray= new int [rows, columns];
     for (int i = 0; i<rows; i++) // цикл 1
         for (int j=0; j<columns; j++ ) // цикл 2
-        newArray [i,j] = new Random().Next(0,100); 
+        newArray [i,j] = new Random().Next(0,20); 
         Console.WriteLine(); 
     return newArray;    
 }
@@ -139,19 +139,38 @@ void Show2DArray (int [,] array)
 
 void FindDigSumm (int [,] array)
 {
-    int sum = 0;
-    for (int x =0; x<array.GetLength(0); x++)
-        for (int y =0; y<array.GetLength(1); y++)
+    int sum =0 ;
+    int x =0;
+    int y =0;
+    
+    for (; x<array.GetLength(0); x++)
+        for (; y<array.GetLength(0); y++)
+            sum+=array[y,x];
+        if (y<y+1)
+            sum =  
+
         
-        if (y==1) 
-        //sum=(array[j,j]+array[j,j]); 
-        Console.Write(array[x,y] + "\t");
+        
+        //Console.Write(array[x,y] + "\t");
+        
+        //count++;
+        // Console.WriteLine("Sum in {0} column: {1}", sum);
+        //Console.Write(sum + "\t");
+         
     //return sum;
 
 }
+
+// int [] sum (int [] array)
+// {
+//     for (int i=0; i<array.GetLength; i++)
+
+// }
+
 Console.Write ("2D Array: ");
 int m = 5;
 int n = 5;
+
 
 Console.WriteLine();
 
@@ -160,4 +179,3 @@ Show2DArray (Myarray);
 //Console.WriteLine($"Среднее арифмитическое столбца {FindDigSumm (Myarray)}  " );
 Console.WriteLine();
 FindDigSumm (Myarray);
-

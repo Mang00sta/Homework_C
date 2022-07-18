@@ -23,13 +23,35 @@ void Show2DArrayMaterialNum (double [,] array)
         Console.WriteLine(); 
     }
 }
+int [,] Create2DArray (int rows, int columns)
+{
+    
+    int [,] newArray= new int [rows, columns];
+    for (int i = 0; i<rows; i++) // цикл 1
+        for (int j=0; j<columns; j++ ) // цикл 2
+        newArray [i,j] = new Random().Next(0,10); //+ NextDouble() 
+        //использовать mathRaund
+        Console.WriteLine(); 
+    return newArray;    
+}
 
+void Show2DArray (int [,] array)
+{
+    for (int i =0; i<array.GetLength(0); i++) // 0??
+    {
+        for (int j=0; j<array.GetLength(1); j++) //??
+        Console.Write(array[i,j] + "\t");
+        Console.WriteLine(); 
+    }
+}
 //! Задача 47. 
 //Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 // m = 3, n = 4.
 // 0,5 7 -2 -0,2
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
+//*
+
 /*
 Console.WriteLine("Input number of rows: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -115,58 +137,23 @@ Console.WriteLine();
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-
-int [,] Create2DArray (int rows, int columns)
+//Если использовать Create2DArray и Show2DArray в int системе то ответ получаеться не дробный.  Как сделать так как в задании только 1 вариант это делать if по каждому столбцу. Фактически искать вручную. Но это как то мне показалось неправильно. Поэтому вот такой вариант.
+/*
+void FindDigSumm (double [,] array)
 {
     
-    int [,] newArray= new int [rows, columns];
-    for (int i = 0; i<rows; i++) // цикл 1
-        for (int j=0; j<columns; j++ ) // цикл 2
-        newArray [i,j] = new Random().Next(0,20); //+ NextDouble() 
-        //использовать mathRaund
-        Console.WriteLine(); 
-    return newArray;    
+    for (int i = 0; i < array.GetLength(0); i++)
+            {
+                double sum = 0;
+                double digi=0;
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    sum=sum+array[j, i];
+                    digi = sum/array.GetLength(0);
+                }
+                Console.WriteLine("Sum in {0} column: {1}", i, digi);
+            }
 }
-
-void Show2DArray (int [,] array)
-{
-    for (int i =0; i<array.GetLength(0); i++) // 0??
-    {
-        for (int j=0; j<array.GetLength(1); j++) //??
-        Console.Write(array[i,j] + "\t");
-        Console.WriteLine(); 
-    }
-}
-
-void FindDigSumm (int [,] array)
-{
-    int sum =0 ;
-    int x =0;
-    int y =0;
-    
-    for (; x<array.GetLength(0); x++)
-        for (; y<array.GetLength(0); y++)
-            sum+=array[y,x];
-        if (y<y+1)
-            sum =  
-
-        
-        
-        //Console.Write(array[x,y] + "\t");
-        
-        //count++;
-        // Console.WriteLine("Sum in {0} column: {1}", sum);
-        //Console.Write(sum + "\t");
-         
-    //return sum;
-
-}
-
-// int [] sum (int [] array)
-// {
-//     for (int i=0; i<array.GetLength; i++)
-
-// }
 
 Console.Write ("2D Array: ");
 int m = 5;
@@ -174,9 +161,7 @@ int n = 5;
 
 
 Console.WriteLine();
-
-int [,] Myarray = Create2DArray(m,n);
-Show2DArray (Myarray);
-//Console.WriteLine($"Среднее арифмитическое столбца {FindDigSumm (Myarray)}  " );
+double [,] Myarray = CreateRandom2DArrayMaterialNum(m,n);
+Show2DArrayMaterialNum (Myarray);
 Console.WriteLine();
 FindDigSumm (Myarray);

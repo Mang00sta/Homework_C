@@ -34,7 +34,6 @@ int [,] Create2DArray (int rows, int columns)
         Console.WriteLine(); 
     return newArray;    
 }
-
 void Show2DArray (int [,] array)
 {
     for (int i =0; i<array.GetLength(0); i++) // 0??
@@ -44,6 +43,8 @@ void Show2DArray (int [,] array)
         Console.WriteLine(); 
     }
 }
+
+/*/
 //! Задача 47. 
 //Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 // m = 3, n = 4.
@@ -70,52 +71,30 @@ Show2DArrayMaterialNum (RandomArrayMaterialNum);
 // 5 9 2 3
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
-/*
-int [,] Create2DArray (int rows, int columns)
-{
-    
-    int [,] newArray= new int [rows, columns];
-    for (int i = 0; i<rows; i++) // цикл 1
-        for (int j=0; j<columns; j++ ) // цикл 2
-        newArray [i,j] = new Random().Next(0,100); 
-        Console.WriteLine(); 
-    return newArray;    
-}
 
-void Show2DArray (int [,] array)
+//*
+void Searchforthenumber (int [,] array, int pos1, int pos2)
 {
-    for (int i =0; i<array.GetLength(0); i++) // 0??
-    {
+    //int pos1=0; int pos2=0;
+    for (int i =0;i<array.GetLength(0); i++)
         for (int j=0; j<array.GetLength(1); j++) 
-        Console.Write(array[i,j] + "\t");
-        Console.WriteLine(); 
+    if (pos1 < 0 | pos1 > array.GetLength(0) - 1 | pos2 < 0 | pos2 > array.GetLength(1) - 1)
+    {
+        Console.WriteLine("Your digit in the table ", array[pos1, pos2] );
     }
-}
-
-void Searchforthenumber (int [,] array, int Digit)
-{
-    int i =0;   
-    int j=0;
-    for (;i<array.GetLength(0); i++)
-        for (; j<array.GetLength(1); j++) 
-            if (array[i,j]==Digit)
-            {
-                
-                Console.WriteLine("Your digit in the table! ");
-                
-            }
-            else
-            {
-               
-                Console.WriteLine("!!!!Your digit NON in the table!!!! ");     
-                  
-            } 
+    else
+    {
+        Console.WriteLine("!!!!Your digit NON in the table!!!! ");
+    }
             
+          
 }
 
+Console.Write("Input rows: ");
+int pos1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Input columns: ");
+int pos2 = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Input digit: ");
-int Digit = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
 Console.Write ("2D Array: ");
 int m = 5;
@@ -125,7 +104,7 @@ Console.WriteLine();
 int [,] Myarray = Create2DArray(m,n);
 Show2DArray (Myarray);
 Console.WriteLine();
-Searchforthenumber(Myarray, Digit);
+Searchforthenumber(Myarray,pos1,pos2);
 Console.WriteLine();
 /*/
 
@@ -141,27 +120,26 @@ Console.WriteLine();
 /*
 void FindDigSumm (double [,] array)
 {
-    
     for (int i = 0; i < array.GetLength(0); i++)
-            {
-                double sum = 0;
-                double digi=0;
-                for (int j = 0; j < array.GetLength(1); j++)
-                {
-                    sum=sum+array[j, i];
-                    digi = sum/array.GetLength(0);
-                }
-                Console.WriteLine("Sum in {0} column: {1}", i, digi);
-            }
+    {
+        double sum = 0;
+        double digi=0;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            sum=sum+array[j, i];
+            digi = sum/array.GetLength(0);
+        }
+        Console.WriteLine("Sum in {0} column: {1}", i, digi);
+    }
 }
 
 Console.Write ("2D Array: ");
 int m = 5;
 int n = 5;
 
-
 Console.WriteLine();
 double [,] Myarray = CreateRandom2DArrayMaterialNum(m,n);
 Show2DArrayMaterialNum (Myarray);
 Console.WriteLine();
 FindDigSumm (Myarray);
+/*/

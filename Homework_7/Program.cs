@@ -29,7 +29,7 @@ int [,] Create2DArray (int rows, int columns)
     int [,] newArray= new int [rows, columns];
     for (int i = 0; i<rows; i++) // цикл 1
         for (int j=0; j<columns; j++ ) // цикл 2
-        newArray [i,j] = new Random().Next(0,10); //+ NextDouble() 
+        newArray [i,j] = new Random().Next(0,100); //+ NextDouble() 
         //использовать mathRaund
         Console.WriteLine(); 
     return newArray;    
@@ -75,19 +75,16 @@ Show2DArrayMaterialNum (RandomArrayMaterialNum);
 //*
 void Searchforthenumber (int [,] array, int pos1, int pos2)
 {
-    //int pos1=0; int pos2=0;
-    for (int i =0;i<array.GetLength(0); i++)
-        for (int j=0; j<array.GetLength(1); j++) 
-    if (pos1 < 0 | pos1 > array.GetLength(0) - 1 | pos2 < 0 | pos2 > array.GetLength(1) - 1)
+    if (pos1 < 0 | pos1 > array.GetLength(0)| pos2 < 0 | pos2 > array.GetLength(1))
     {
-        Console.WriteLine("Your digit in the table ", array[pos1, pos2] );
+         //Console.WriteLine("Your digit in the table: " + array[pos1-1, pos2-1] );
+         Console.WriteLine("!!!!Your digit NON in the table!!!! ");
     }
     else
     {
-        Console.WriteLine("!!!!Your digit NON in the table!!!! ");
-    }
-            
-          
+        Console.WriteLine("Your digit in the table: " + array[pos1-1, pos2-1] );
+        //Console.WriteLine("!!!!Your digit NON in the table!!!! ");
+    }        
 }
 
 Console.Write("Input rows: ");
@@ -116,7 +113,7 @@ Console.WriteLine();
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-//Если использовать Create2DArray и Show2DArray в int системе то ответ получаеться не дробный.  Как сделать так как в задании только 1 вариант это делать if по каждому столбцу. Фактически искать вручную. Но это как то мне показалось неправильно. Поэтому вот такой вариант.
+//Если использовать Create2DArray и Show2DArray в int системе то ответ получаеться не дробный.  Как сделать так как в задании? Только 1 вариант это делать через if по каждому столбцу. Фактически искать вручную. Но это как то мне показалось неправильно. Поэтому вот такой вариант.
 /*
 void FindDigSumm (double [,] array)
 {

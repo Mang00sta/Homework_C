@@ -7,7 +7,10 @@ double [,] CreateRandom2DArrayMaterialNum (int rows, int columns)
     for (int i = 0; i<rows; i++) // цикл 1
             for (int j=0; j<columns; j++ ) // цикл 2
             {
-              newArray[i,j] = Math.Round(rnd.NextDouble()*10,1); // Подглядел! округлил до сотых через Math.Round. Сделал числа через NextDouble и конверитировал их до десятых.   Как сделать что бы и сотые были и целые я не знаю!         
+              newArray[i,j] = Math.Round(rnd.NextDouble()*10,1); 
+              // Подглядел! округлил до сотых через Math.Round.          
+              //newArray[i,j] = Math.Round(rnd.NextDouble() * (100 - (-100)) + (-100),2); 
+              // -отрицательные 
             }
     
         return newArray;

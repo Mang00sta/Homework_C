@@ -1,22 +1,22 @@
 ﻿//Массивы
-int [,] Create2DArray (int rows, int columns)
+int[,] Create2DArray(int rows, int columns)
 {
-    
-    int [,] newArray= new int [rows, columns];
-    for (int i = 0; i<rows; i++) // цикл 1
-        for (int j=0; j<columns; j++ ) // цикл 2
-        newArray [i,j] = new Random().Next(0,100); //+ NextDouble() 
-        //использовать mathRaund
-        Console.WriteLine(); 
-    return newArray;    
+
+    int[,] newArray = new int[rows, columns];
+    for (int i = 0; i < rows; i++) // цикл 1
+        for (int j = 0; j < columns; j++) // цикл 2
+            newArray[i, j] = new Random().Next(0, 20); //+ NextDouble() 
+                                                       //использовать mathRaund
+    Console.WriteLine();
+    return newArray;
 }
-void Show2DArray (int [,] array)
+void Show2DArray(int[,] array)
 {
-    for (int i =0; i<array.GetLength(0); i++) // 0??
+    for (int i = 0; i < array.GetLength(0); i++) // 0??
     {
-        for (int j=0; j<array.GetLength(1); j++) //??
-        Console.Write(array[i,j] + "\t");
-        Console.WriteLine(); 
+        for (int j = 0; j < array.GetLength(1); j++) //??
+            Console.Write(array[i, j] + "\t");
+        Console.WriteLine();
     }
 }
 
@@ -32,36 +32,41 @@ void Show2DArray (int [,] array)
 // 2 3 5 9
 // 2 4 4 8
 
-int [,] ChangeString (int [,] array)
+int[,] ChangeString(int[,] array)
+{
+   
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-         
-         for (int i=0; i<array.GetLength(0); i++)
-            for (int j=0; j<array.GetLength(1) ; j++) 
-            
-                if (array>array[i,j])
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(1) - 1; k++)
+            {
+                if (array[i, k] > array[i, k + 1])
                 {
-                 int temp = array[i,j];
-                 array[i,j] = array [i,array.GetLength(1)-1];
-                 array [i, array.GetLength(0)-1] =temp;
+                int temp = array[i, k + 1];
+                array[i, k + 1] = array[i, k];
+                array[i, k] = temp;
                 }
-             return array;
+            }
+        }
     }
 
 
+     return array;
+}
+
+
 Console.WriteLine();
-Console.Write ("2D Array: ");
+Console.Write("2D Array: ");
 int m = 5;
 int n = 5;
 Console.WriteLine();
 
-int [,] Myarray = Create2DArray(m,n);
-Show2DArray (Myarray);
+int[,] Myarray = Create2DArray(m, n);
+Show2DArray(Myarray);
 Console.WriteLine();
 Show2DArray(ChangeString(Myarray));
 Console.WriteLine();
-
-
-
 
 
 //!Задача 56:

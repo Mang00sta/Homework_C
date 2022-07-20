@@ -7,7 +7,7 @@ double [,] CreateRandom2DArrayMaterialNum (int rows, int columns)
     for (int i = 0; i<rows; i++) // цикл 1
             for (int j=0; j<columns; j++ ) // цикл 2
             {
-              newArray[i,j] = Math.Round(rnd.NextDouble() * (100 - (-100)) + (-100),2); // округлил до сотых через Math.Round. Сделал числа через NextDouble и конверитировал их до десятых.   Как сделать что бы и сотые были и целые я не знаю!         
+              newArray[i,j] = Math.Round(rnd.NextDouble()*10,1); // Подглядел! округлил до сотых через Math.Round. Сделал числа через NextDouble и конверитировал их до десятых.   Как сделать что бы и сотые были и целые я не знаю!         
             }
     
         return newArray;
@@ -72,7 +72,7 @@ Show2DArrayMaterialNum (RandomArrayMaterialNum);
 // 8 4 2 4
 // 17 -> такого числа в массиве нет
 
-//*
+/*
 void Searchforthenumber (int [,] array, int pos1, int pos2)
 {
     if (pos1 < 0 | pos1 > array.GetLength(0)| pos2 < 0 | pos2 > array.GetLength(1))
@@ -114,7 +114,7 @@ Console.WriteLine();
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
 //Если использовать Create2DArray и Show2DArray в int системе то ответ получаеться не дробный.  Как сделать так как в задании? Только 1 вариант это делать через if по каждому столбцу. Фактически искать вручную. Но это как то мне показалось неправильно. Поэтому вот такой вариант.
-/*
+//*
 void FindDigSumm (double [,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -126,7 +126,7 @@ void FindDigSumm (double [,] array)
             sum=sum+array[j, i];
             digi = sum/array.GetLength(0);
         }
-        Console.WriteLine("Sum in {0} column: {1}", i, digi);
+        Console.WriteLine("Sum in column: "+  digi);
     }
 }
 
@@ -139,4 +139,4 @@ double [,] Myarray = CreateRandom2DArrayMaterialNum(m,n);
 Show2DArrayMaterialNum (Myarray);
 Console.WriteLine();
 FindDigSumm (Myarray);
-/*/
+//*/

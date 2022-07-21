@@ -2,10 +2,18 @@
 // Задайте значение N. Напишите программу, которая найдет кол-во цифр в числе N рекурсивным методом.
 //N = 4532 -> 4
 
+int NumDigi(int n)
+{
+    int count = 1;
+    if (n!=0)
+    {
+        if (n / 10 != 0)
+           count+= NumDigi(n / 10);
+    }
+    return count;
+}
 
-
-
-
+Console.WriteLine(NumDigi(851)); 
 
 
 

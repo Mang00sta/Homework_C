@@ -107,38 +107,30 @@ void FindDigSumm (int [,] array)
 /*/            
 
 // 2й вариант не доделал не хватило времени
-/*
-void FindDigSumm (int [,] array)
+//*
+int FindDigSumm (int [,] array)
 {
     
-    int sum = 0;
-    //int sum1 = 0;
-    int sum2 = 0;
     int min = 0;
     int count =0;
-    int temp =0;
+
     for (int i = 0; i < array.GetLength(0); i++)
     {
+        int sum=0;
         for (int j = 0; j < array.GetLength(1); j++)
         {
             sum=sum+array[i, j];            
         }
-        int sum1=sum;
-                Console.WriteLine("Выходная сумма  " + sum1);    
-        sum=0;
-            
-            if (sum1>temp)
-                {
-                    temp = sum1;
-                    sum1 = temp;    
-                    
-                   Console.WriteLine("Круги внутри   " + count);                     
-                }  
-                count++;
-           
-        Console.WriteLine("Круги   " + count);
+        if (i==0) min=sum;
+        if (sum<min)
+        {
+            min=sum;
+            count=i;
+        }
+                
     }
-    Console.WriteLine("Суммы  " + temp);
+    return count;
+    
 }
 
 Console.WriteLine();
@@ -152,7 +144,7 @@ Show2DArray(Myarray);
 Console.WriteLine();
 FindDigSumm (Myarray);
 Console.WriteLine();
-/*/
+//*/
 
 //!Задача 62. 
 //Заполните спирально массив 4 на 4.
